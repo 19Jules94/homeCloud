@@ -6,10 +6,7 @@ const app = express();
 app.use('',router);
 
 
-app.get('',(req,res)=>{
 
-    res.send("hola")
-})
 app.listen(port,()=>{
     console.log(`Escuchando en el puerto ${port}`); //variable de entorno port
 }) 
