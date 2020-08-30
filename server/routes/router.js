@@ -15,7 +15,11 @@ const processPath = (storagePath) => {
 
 const moveFile = (pathDestino, file) => {
   return new Promise((resolve, reject) => {
+<<<<<<< HEAD
     file.mv(path.join(pathDestino, file.name), (err) => {
+=======
+    file.mv(path.join(pathDestino,file.name), (err) => {
+>>>>>>> 589e05aa9273ce7590c76d243e3553027bf70dbd
       if (err) {
         reject(err);
       } else {
@@ -25,6 +29,7 @@ const moveFile = (pathDestino, file) => {
   });
 };
 
+<<<<<<< HEAD
 const createFolder = (pathDestino, nameFolder) => {
   return new Promise((resolve, reject) => {
     fs.mkdir(path.join(pathDestino, nameFolder), (err) => {
@@ -37,6 +42,8 @@ const createFolder = (pathDestino, nameFolder) => {
   });
 };
 /*
+=======
+>>>>>>> 589e05aa9273ce7590c76d243e3553027bf70dbd
 router.post("/:path?", async(req, res,next) => {
   let files = req.files.files;  
   const pathDirectorio = processPath(req.params.path);
@@ -55,6 +62,7 @@ router.post("/:path?", async(req, res,next) => {
     message:"Subido con exito",
     path:pathDirectorio.relativePath
   });
+<<<<<<< HEAD
 });
 */
 
@@ -66,7 +74,10 @@ router.post("/:path?", async (req, res) => {
     console.log(err.message);
   }
   res.json({message:"Carpeta creada con exito"})
+=======
+>>>>>>> 589e05aa9273ce7590c76d243e3553027bf70dbd
 });
+
 
 router.get("/:path?", async (req, res) => {
   try {
@@ -74,7 +85,11 @@ router.get("/:path?", async (req, res) => {
     //console.log({ path: directorio });
     const directo = await fs.promises.opendir(directorio.absolutePath);
     const contenido = { archivos: [], directorios: [] };
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> 589e05aa9273ce7590c76d243e3553027bf70dbd
     for await (const dir of directo) {
       if (dir.isDirectory()) {
         contenido.directorios.push(dir.name);
